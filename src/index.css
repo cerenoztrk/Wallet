@@ -99,7 +99,7 @@ html {
   opacity: 0.5;
   animation-name: rotate;
   animation-duration: 2s;
-  animation-iteration-count: 1;
+  animation-iteration-count:infinite;
   animation-timing-function: linear;
 }
 

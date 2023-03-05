@@ -22,7 +22,7 @@ function App() {
           <Route path="/Debits" element={<Debits />} />
           <Route path="/Login" element={<Login />} />
         </Routes>
-
+        <Main/>
         <Sidebar />
       </BrowserRouter>
     </>
