@@ -1,13 +1,513 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  --text-color: #000;
+  --page-color: #fff;
+  --button-color: #5c61f2 !important;
+  --color: rgb(161, 158, 158);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(194, 233, 224);
+  font-family: "Montserrat", sans-serif;
 }
+/* SIDEBAR */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+.main {
+  font-family: Arial;
+  font-size: 16px;
+  background: #5e42a6;
+}
+@media screen and (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+}
+.sidebar {
+  position: fixed;
+  width: 25%;
+  height: 100vh;
+  background: #5747ec;
+  font-size: 0.65em;
+}
+
+.nav {
+  position: relative;
+  margin: 0 15%;
+  text-align: right;
+  top: 50%;
+  transform: translateY(-50%);
+  font-weight: bold;
+}
+
+.nav ul {
+  list-style: none;
+}
+
+.nav ul li {
+  position: relative;
+  margin: 3.2em 0;
+}
+
+.nav ul li a {
+  line-height: 5em;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.4em;
+  color:#000 ;
+  display: block;
+  transition: all ease-out 300ms;
+}
+
+.nav ul li a:hover {
+  color: white;
+}
+
+
+ .nav ul li::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 0.2em;
+  background: black;
+  left: 0;
+  bottom: 0;
+  
+  
+} 
+.main-page{
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: #8b92f8;
+  position: absolute;
+  text-align: center;
+  top: 170px;
+  right: 190px;
+  font-size: 45px;
+  font-weight: bold;
+  z-index: 1
+  
+}
+.logo{
+  width: 300px;
+  height: auto;
+  position: absolute;
+  top: 120px;
+  right: 410px;
+  z-index: 0;
+  opacity: 0.5;
+  animation-name: rotate;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+/* LOGİN */
+@media screen and (max-width: 768px) {
+  .login-container {
+    width: 90%;
+  }
+}
+.login-container {
+  background-color: var(--page-color);
+  position: absolute;
+  top: 20px;
+  right: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 37px rgb(8 21 66 / 5%);
+  margin: 20px;
+  padding: 10px;
+  border-radius: 10px;
+  width: 450px;
+  height: auto;
+ 
+ 
+}
+
+.form-text {
+  text-align: center;
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+.theme-form p {
+  font-size: 15px;
+  color: var(--color);
+}
+label {
+  display: inline-block;
+  cursor: default;
+}
+
+.form-text-row {
+  font-size: 15px;
+  flex-direction: column;
+  display: block;
+  line-height: 1.9;
+}
+.text-muted {
+  padding: 10px;
+  margin: 5px auto;
+  font-size: 15px;
+  flex-direction: row;
+  display: inline-block;
+  line-height: 1.9;
+}
+.checkbox a {
+  color: #5c61f2;
+  text-decoration: none;
+}
+.form-control {
+  width: 100%;
+  height: 30px;
+  border-radius: 2px;
+  border: 1px solid var(--color);
+}
+.signbtn {
+  width: 100%;
+  height: 30px;
+  border-radius: 15px;
+  font-size: 15px;
+  background-color: var(--button-color);
+  color: #fff;
+  border: 0px solid;
+}
+
+.social-title {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #979797;
+  background-color: #fff;
+  padding-left: 25px;
+  padding-right: 25px;
+  font-size: 20px;
+}
+
+.social-icon {
+  position: relative;
+  font-size: 17px;
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding-block: 1rem;
+}
+.social-icon li a {
+  color: blue;
+  line-height: 0;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.social-icon li:hover {
+  top: -1px;
+}
+.social-icon li {
+  list-style-type: none;
+  position: relative;
+  height: 45px;
+  width: 45px;
+  border-radius: 999999px;
+  color: #fff;
+  background-color: #e9e5e5;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.social-icon li:hover {
+  background-color: #5c61f2;
+}
+.social-icon li:hover:after {
+  opacity: 1;
+  transform: scale(1.12);
+  transition-timing-function: cubic-bezier(0.37, 0.74, 0.15, 1.65);
+}
+.social-icon li:hover a {
+  color: #fff;
+}
+
+.text-center p {
+  padding: 30px;
+  margin: 10px;
+  letter-spacing: 1px;
+  margin-left: 0.5rem !important;
+  line-height: 1.6;
+  font-weight: 500;
+  text-align: center;
+}
+.text-center a {
+  color: #5c61f2;
+  text-decoration: none;
+}
+.info h1{
+  position: absolute;
+  top: 20px;
+  right: 210px;
+  top: 50px;
+  float: right;
+  font-size:2.5rem;
+  font-weight: 300;
+  font-size:"Montserrat", sans-serif ;
+  text-align: center;
+  margin-top:100px ;
+  color: #525151;
+}
+/* PROFİLE */
+@media (max-width: 768px) {
+  .profile-container {
+    width: 90%;
+  }
+  .profile-cards {
+    min-width: 80%;
+  }
+}
+.profile-container {
+  position: absolute;
+  top: 150px;
+  right: 250px;
+  width: 550px;
+  height: 250px;
+  font-family:"Montserrat", sans-serif ;
+  border-radius: 30px;
+  border: 0px solid ; 
+}
+@media (max-width: 768px) {
+  .profile-container {
+    width: 90%;
+  }
+  .profile-cards {
+    min-width: 80%;
+  }
+}
+.profile-card  h2{
+  font-size: 30px;
+  text-align: center;
+}
+.profile-card  {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: start; 
+  border: 1px solid #ddd;
+  padding: 20px;
+}
+
+.profile-card h3 {
+  font-size: 24px;
+  margin: 10px 0;
+  color: #333;
+}
+
+.profile-card p {
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: #666;
+}
+.info h1{
+  position: absolute;
+  top: 20px;
+  right: 210px;
+  top: 50px;
+  float: right;
+  font-size:2.5rem;
+  font-weight: 300;
+  font-size:"Montserrat", sans-serif ;
+  text-align: center;
+  margin-top:100px ;
+  color: #525151;
+}
+
+/* HOMEPAGE */
+@media screen and (max-width: 768px) {
+  .homepage-container {
+    width: 90%;
+  }
+}
+
+.homepage-container {
+  position: absolute;
+  top: 20px;
+  right: 230px;
+  justify-content:center;
+  align-items: center;
+  display:flex;
+  font-size: 25px;
+  margin-top: 200px;
+  background-color: var(--page-color);
+  width: 650px;
+  height: 200px;
+  font-family:"Montserrat", sans-serif ;
+  border-radius: 30px;
+  border: 0px solid ;
+}
+.content-user, .content-wallet, .content-invoices, .content-debits {
+  margin-right: 10px;
+}
+.homepage-container a {
+  color: #525151;
+  text-decoration: none;
+
+}
+.homepage-container a:hover {
+  color: #000;
+  text-decoration: none;
+  font-size: 35px;
+}
+
+/* WALLET */
+.form-container{
+  position: absolute;
+  top: 20px;
+  right: 210px;
+  background-color: var(--page-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 37px rgb(8 21 66 / 5%);
+  margin:20px auto;
+  border-radius: 10px;
+  margin: 0 auto;
+  background-color: #f9f9f9;
+  padding: 30px;
+  width: 650px;
+  height: 500px;
+  
+}
+.portlet-body-form h1{
+  position: absolute;
+  top: 50px;
+  right: 200px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  font-size: 25px;
+  color: #000;
+}
+.form-line-input label{
+  display: inline-block;
+  cursor: default;
+  font-size: 18px;
+  text-align: center;  
+  line-height: 1.9;
+  color: #525151;
+  height: 30px;
+ 
+}
+
+.col-md-10 input{
+  border-radius: 5px;
+  width: 450px;
+  height: 30px;
+  border: 0.1px solid gray ;
+}
+
+.col-md-10 select{
+  border-radius: 5px;
+  width: 455px;
+  height: 35px;
+}
+.form-container .loadbtn {
+  margin-top: 10px;
+  width: 100%;
+  height: 30px;
+  border-radius: 15px;
+  font-size: 15px;
+  background-color: var(--button-color);
+  color: #fff;
+  border: 0px solid;
+}
+
+ 
+.invoices-header h1{
+  float: right;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  top: 50px;
+  right:550px;
+  position: relative;
+}
+
+.invoices-container{
+  background-color: var(--page-color);
+  float: right;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  margin:20px auto;
+  border-radius: 10px;
+  margin: 0 auto;
+  padding: 30px;
+  width: 40%;
+  top: 150px;
+  right:150px;
+  position: relative;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  
+  margin: auto;
+}
+
+tr:nth-child(even) {
+  background-color: #858282;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+th {
+  background-color: #90afd8;
+  color: white;
+}
+
+.debts-container {
+  position: absolute;
+  top: 20px;
+  right: 250px;
+  justify-content:start;
+  align-items: start;
+  display:inline-flex;
+  margin-top: 200px;
+  background-color: var(--page-color);
+  width: 450px;
+  height: 200px;
+  font-family:"Montserrat", sans-serif ;
+  border-radius: 30px;
+  border: 0px solid ;
+}
+.debts-info h2{
+  position: absolute;
+  top: 20px;
+  right: 280px;
+  font-size: 50px;
+}
+
