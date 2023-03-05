@@ -5,6 +5,9 @@ const Sidebar = () => {
     
         
         <div className="sidebar">
+            <div className="main-page">
+        <h2>Welcome to wallet</h2>
+        </div>
           <nav className="nav">
             <ul>
               <li><Link to="/Login">LOGIN</Link></li>

@@ -27,6 +27,7 @@ const Debits: React.FC = () => {
         <h2>Upcoming Debts</h2>
       </div>
       <div className="debts-container">
+      
         <table>
           <thead>
             <tr>

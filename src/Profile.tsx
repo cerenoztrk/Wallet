@@ -33,7 +33,7 @@ const Profile: React.FC = () => {
           <div key={index} className="profile-card">
             <h2>Profile Information</h2>
             <h3>
-              Name: {userCard.name} {userCard.surname}
+              Name: {userCard.name} {userCard.surname} <hr/>
             </h3>
             <p>Phone: {userCard.phone}</p>
             <p>Email: {userCard.email}</p>

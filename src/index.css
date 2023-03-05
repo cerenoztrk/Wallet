@@ -1,8 +1,10 @@
 :root {
   --text-color: #000;
-  --page-color: #fff;
+  --text-color2: #fff;
+  --page-color: #ffffff;
   --button-color: #5c61f2 !important;
   --color: rgb(161, 158, 158);
+  --sidebar-color: #5747ec;
 }
 
 
@@ -15,11 +17,11 @@ html {
 }
 /* SIDEBAR */
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
-.main {
+ .main {
   font-family: Arial;
   font-size: 16px;
   background: #5e42a6;
-}
+} 
 @media screen and (max-width: 768px) {
   .sidebar {
     display: none;
@@ -29,7 +31,7 @@ html {
   position: fixed;
   width: 25%;
   height: 100vh;
-  background: #5747ec;
+  background: var(--sidebar-color);
   font-size: 0.65em;
 }
 
@@ -56,13 +58,13 @@ html {
   text-transform: uppercase;
   text-decoration: none;
   letter-spacing: 0.4em;
-  color:#000 ;
+  color:var(--text-color) ;
   display: block;
   transition: all ease-out 300ms;
 }
 
 .nav ul li a:hover {
-  color: white;
+  color: var(--text-color2);
 }
 
 
@@ -79,28 +81,36 @@ html {
 } 
 .main-page{
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  color: #8b92f8;
-  position: absolute;
+  color: #363746;
   text-align: center;
-  top: 170px;
-  right: 190px;
-  font-size: 45px;
+  font-size: 23px;
   font-weight: bold;
-  z-index: 1
+  position: absolute;
+  top: 30px;
+  
   
 }
 .logo{
-  width: 300px;
+  width: 200px; 
   height: auto;
   position: absolute;
-  top: 120px;
-  right: 410px;
+  top: 100px;
+  right: 550px;
   z-index: 0;
-  opacity: 0.5;
+  opacity: 0.3;
   animation-name: rotate;
   animation-duration: 2s;
-  animation-iteration-count:infinite;
+  animation-iteration-count: 1;
   animation-timing-function: linear;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes rotate {
@@ -134,6 +144,7 @@ html {
   border-radius: 10px;
   width: 450px;
   height: auto;
+  z-index: 1;
  
  
 }
@@ -285,6 +296,7 @@ label {
   }
 }
 .profile-container {
+  background-color: var(--page-color);
   position: absolute;
   top: 150px;
   right: 250px;
@@ -293,6 +305,7 @@ label {
   font-family:"Montserrat", sans-serif ;
   border-radius: 30px;
   border: 0px solid ; 
+  z-index: 1;
 }
 @media (max-width: 768px) {
   .profile-container {
@@ -326,19 +339,7 @@ label {
   margin-bottom: 8px;
   color: #666;
 }
-.info h1{
-  position: absolute;
-  top: 20px;
-  right: 210px;
-  top: 50px;
-  float: right;
-  font-size:2.5rem;
-  font-weight: 300;
-  font-size:"Montserrat", sans-serif ;
-  text-align: center;
-  margin-top:100px ;
-  color: #525151;
-}
+
 
 /* HOMEPAGE */
 @media screen and (max-width: 768px) {
@@ -362,6 +363,21 @@ label {
   font-family:"Montserrat", sans-serif ;
   border-radius: 30px;
   border: 0px solid ;
+  z-index: 1;
+}
+.info h1{
+  position: absolute;
+  top: 20px;
+  right: 210px;
+  top: 50px;
+  float: right;
+  font-size:2.5rem;
+  font-weight: 300;
+  font-size:"Montserrat", sans-serif ;
+  text-align: center;
+  margin-top:100px ;
+  color: #525151;
+  z-index: 1;
 }
 .content-user, .content-wallet, .content-invoices, .content-debits {
   margin-right: 10px;
@@ -390,10 +406,11 @@ label {
   margin:20px auto;
   border-radius: 10px;
   margin: 0 auto;
-  background-color: #f9f9f9;
+  
   padding: 30px;
   width: 650px;
   height: 500px;
+  z-index: 1;
   
 }
 .portlet-body-form h1{
@@ -442,16 +459,8 @@ label {
 }
 
  
-.invoices-header h1{
-  float: right;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  top: 50px;
-  right:550px;
-  position: relative;
-}
 
+/* INVOICES */
 .invoices-container{
   background-color: var(--page-color);
   float: right;
@@ -463,11 +472,22 @@ label {
   margin: 0 auto;
   padding: 30px;
   width: 40%;
+  height: 200px;
   top: 150px;
-  right:150px;
+  right:100px;
   position: relative;
+  z-index: 1;
 }
-
+.invoices-header h1{
+  float: right;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  top: 50px;
+  right:500px;
+  position: relative;
+  font-size: 35px;
+}
 table {
   border-collapse: collapse;
   width: 100%;
@@ -488,8 +508,9 @@ th {
   background-color: #90afd8;
   color: white;
 }
-
+/* DEBITS */
 .debts-container {
+
   position: absolute;
   top: 20px;
   right: 250px;
@@ -498,16 +519,18 @@ th {
   display:inline-flex;
   margin-top: 200px;
   background-color: var(--page-color);
-  width: 450px;
+  width: 550px;
   height: 200px;
   font-family:"Montserrat", sans-serif ;
   border-radius: 30px;
   border: 0px solid ;
+  z-index: 1;
 }
 .debts-info h2{
   position: absolute;
-  top: 20px;
-  right: 280px;
+  top: 70px;
+  right: 300px;
   font-size: 50px;
+  z-index: 1;
 }
 
