@@ -5,16 +5,19 @@ import { FiFacebook } from "react-icons/fi";
 import { SlSocialLinkedin } from "react-icons/sl";
 import Sidebar from "./Sidebar";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 interface UserCredentials {
   email: string;
   password: string;
+  success: boolean; 
 }
 
 const Login: React.FC = () => {
   const [credentials, setCredentials] = useState<UserCredentials>({
     email: "",
     password: "",
+    success: false
   });
 
   const handleInputChange = (event: React.FormEvent<HTMLInputElement>) => {
@@ -25,32 +28,31 @@ const Login: React.FC = () => {
     }));
   };
   const navigate = useNavigate();
+ 
   const handleLogin = async () => {
-    
-    const response = await fetch("/Login", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(credentials),
-    });
-    localStorage.setItem("email",credentials.email )
-    navigate('/homepage');
-    // document.location.href='';
-    const data = await response.json();
-    setCredentials(data.success);
+    try {
+      const response = await axios.post<UserCredentials>("http://localhost:5266/api/Users", credentials, {
+        headers: {
+          "Content-Type": "application/json"
+        }
+      });
+      
+      localStorage.setItem("email", credentials.email);
+      navigate('/Homepage');
+      
+      
+      const data = response.data;
+      setCredentials(data);
+      
+    } catch (error) {
+      console.error(error);
+    }
   };
-
-  // const handleLogin = async () => {
-  //   try {
-  //     const response = await axios.post('/login', credentials);
-  //     const data = response.data;
-  //     if (data.success) {
-  //       document.location.href="homepage.tsx";
-  //     }
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // };
-
+ 
+  
+  
+  
+  
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();

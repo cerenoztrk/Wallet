@@ -36,7 +36,7 @@ const Profile: React.FC = () => {
               Name: {userCard.name} {userCard.surname} <hr/>
             </h3>
             <p>Phone: {userCard.phone}</p>
-            <p>Email: {userCard.email}</p>
+            <p>Email:{userCard.email}</p>
             <p>Password: {userCard.password}</p>
           </div>
         ))}

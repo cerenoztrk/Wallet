@@ -5,7 +5,7 @@ import axios from "axios";
 interface Debt {
   bank: string;
   amount: number | null;
-  Date: Date | null;
+  date: number;
 }
 
 const Debits: React.FC = () => {
@@ -41,7 +41,7 @@ const Debits: React.FC = () => {
               <tr key={index}>
                 <td>{debt.bank}</td>
                 <td>{debt.amount} TL</td>
-                <td>{debt.Date ? new Date(debt.Date).toLocaleDateString() : ""}</td>
+                <td>{debt.date}</td>
               </tr>
             ))}
           </tbody>
