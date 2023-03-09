@@ -2,6 +2,7 @@
 import Sidebar from "./Components/Sidebar";
 import { useState,useEffect } from "react";
 import axios from "axios";
+
 interface Debt {
   bank: string;
   amount: number | null;

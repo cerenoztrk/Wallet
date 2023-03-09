@@ -49,10 +49,6 @@ const Login: React.FC = () => {
     }
   };
  
-  
-  
-  
-  
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -136,7 +132,7 @@ const Login: React.FC = () => {
         <div className="text-center">
           <p className="row1">
             Don't have account?
-            <a className="row2" href="">
+            <a className="row2" href="#">
               Create Account
             </a>
           </p>

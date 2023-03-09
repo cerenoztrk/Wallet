@@ -113,16 +113,6 @@ html {
   }
 }
 
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-
 
 /* LOGİN */
 @media screen and (max-width: 768px) {
@@ -138,15 +128,12 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 0 37px rgb(8 21 66 / 5%);
   margin: 20px;
   padding: 10px;
   border-radius: 10px;
   width: 450px;
   height: auto;
   z-index: 1;
- 
- 
 }
 
 .form-text {
@@ -307,14 +294,7 @@ label {
   border: 0px solid ; 
   z-index: 1;
 }
-@media (max-width: 768px) {
-  .profile-container {
-    width: 90%;
-  }
-  .profile-cards {
-    min-width: 80%;
-  }
-}
+
 .profile-card  h2{
   font-size: 30px;
   text-align: center;
